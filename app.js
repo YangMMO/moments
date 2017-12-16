@@ -267,7 +267,7 @@ function bindEvent() {
   var idx ;
   var picSrc;
 
-  $window.on('click', function(event) {
+  $window.on('touchend', function(event) {
     var target = event.target;
     var $clickBtn = $(target);
 
@@ -284,7 +284,7 @@ function bindEvent() {
 
   //图片点击事件
   //datetime 2017-12-15 23:32:08
-  $body.on('click', '.curPic', function() {
+  $body.on('touchend', '.curPic', function() {
     var $thisPic = $(this);
     var $curPic = $('.pic-bg');
     var picSrc = $thisPic.attr('src');
@@ -297,7 +297,7 @@ function bindEvent() {
     return false;
   })
 
-  $body.on('click', '.pic-bg', function() {
+  $body.on('touchend', '.pic-bg', function() {
     $(this).css({
       'display': 'none'
     })
@@ -307,7 +307,7 @@ function bindEvent() {
 
   //评论回复事件
   //2017-12-15 23:31:25
-  $body.on('click', '.comment-item', function() {
+  $body.on('touchend', '.comment-item', function() {
     var $this = $(this);
     var $commentsText = $('.comments-text');
     var $comments = $('.comments');
@@ -329,7 +329,7 @@ function bindEvent() {
 
   //*评论点击事件
   //2017-12-15 23:31:29
-  $body.on('click', '.reply-panel-comment', function() {
+  $body.on('touchend', '.reply-panel-comment', function() {
     var $this = $(this);
     var $commentsText = $('.comments-text');
     var $comments = $('.comments');
@@ -344,7 +344,7 @@ function bindEvent() {
 
   //发送按钮事件
   //2017-12-15 23:31:32
-  $body.on('click', '.comments-btn', function(event) {
+  $body.on('touchend', '.comments-btn', function(event) {
     var $comments = $('.comments');
     var $moments = $('.moments-item').eq(idx);
     var $commentsText = $('.comments-text');
@@ -376,17 +376,17 @@ function bindEvent() {
 
   //输入框事件
   //2017-12-14 23:39:54
-  $body.on('click', '.comments-text', function(event) {
+  $body.on('touchend', '.comments-text', function(event) {
     return false;
   })
 
-  $body.on('focus', '.comments-text', function(event) {
+  $body.on('touchend', '.comments-text', function(event) {
     var $commentsText = $('.comments-text');
     $commentsText.removeClass('comments-not');
     return false;
   })
 
-  $body.on('keydown', '.comments-text', function(event) {
+  $body.on('touchend', '.comments-text', function(event) {
     var keyCode = event.keyCode;
 
     if (keyCode === 13) {
@@ -396,7 +396,7 @@ function bindEvent() {
 
   //*点赞点击事件
   //2017-12-14 09:37:19
-  $body.on('click', '.reply-panel-like', function() {
+  $body.on('touchend', '.reply-panel-like', function() {
     var $moments = $('.moments-item').eq(idx);
     var $replyPanel = $('reply-panel');
     idx = parseInt(curIndex.join(''));
@@ -421,7 +421,7 @@ function bindEvent() {
 
   //点赞评论面板事件
   //2017-12-14 09:37:25
-  $body.on('click', '.item-reply-btn',  function(){
+  $body.on('touchend', '.item-reply-btn',  function(){
     var $comments = $('.comments');
     var $replyPanel = $('.reply-panel');
     var $curBtn = $(this);
